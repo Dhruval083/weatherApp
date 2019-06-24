@@ -11,7 +11,6 @@ const weatherDataToDays = (previous, weatherItem) => {
 };
 
 const getDayArray = (weatherData) => {
-    console.log(weatherData);
     const dates = weatherData.map(getDate);
     const uniqueDates = Array.from(new Set(dates));
     const dayData = weatherData.reduce(weatherDataToDays, {});
