@@ -58,14 +58,14 @@ class App extends Component {
 
   render() {
     const { onClick, onChange } = this;
-    const { error, searchText, response, showError, cityCountry } = this.state;
+    const { error, searchText, response, showError } = this.state;
     const weatherData = response.list || null;
 
     return (
       <div className="WeatherApp">
         <SearchWrapper {...{ onClick, onChange, searchText }} />
         { showError && <ErrorWrapper message={error} /> }
-        { weatherData && <WeatherWrapper weatherData={weatherData} city={cityCountry} /> }
+        { weatherData && <WeatherWrapper weatherData={weatherData} /> }
       </div>
     );
   }
