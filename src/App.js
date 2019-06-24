@@ -74,7 +74,7 @@ class App extends Component {
     return (
       <div className="WeatherApp">
         <SearchWrapper {...{ onClick, onChange, searchText }} />
-        { weatherData ? <MainWeather mainWeather={weatherAtNoon} /> : 'Loading...'}
+        { weatherData ? <MainWeather mainWeather={weatherAtNoon} /> : (!showError && 'Loading...')}
         { showError && <ErrorWrapper message={error} /> }
         { weatherData && <WeatherWrapper weatherData={weatherData} handler={this.setMainWeather} /> }
       </div>
